@@ -1,26 +1,27 @@
 import React from 'react';
 import styleCl from './Navbar.module.css';
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
     return (
-        <div className={styleCl.nav}>
+        <nav className={styleCl.nav}>
             <div className={styleCl.item}>
-                <a href="/profile">Profile</a>
+                <NavLink to="/profile" activeClassName={styleCl.activeLink}>Profile</NavLink>
             </div>
             <div className={styleCl.item}>
-                <a href="/dialogs">Messages</a>
+                <NavLink to="/dialogs" activeClassName={styleCl.activeLink}>Messages</NavLink>
             </div>
             <div className={styleCl.item}>
-                <a href="/news">News</a>
+                <NavLink to="/news" activeClassName={styleCl.activeLink}>News</NavLink>
             </div>
             <div className={styleCl.item}>
-                <a href="/music">Music</a>
+                <NavLink to="/music" activeClassName={styleCl.activeLink}>Music</NavLink>
             </div>
             <div className={styleCl.item}>
-                <a href="/settings">Settings</a>
+                <NavLink to="/settings" activeClassName={styleCl.activeLink}>Settings</NavLink>
             </div>
-        </div>
+        </nav>
     )
 }
 

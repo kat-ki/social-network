@@ -7,14 +7,14 @@ import pic2 from "./pic2.jpg"
 
 const Profile = () => {
     return (
-        <div>
+        <div className={styleCl.item}>
             <div>
                 <img
                     src={pic2}
-                    alt='picture'/>
+                    alt=''/>
             </div>
             <div>
-                profile description
+                <div> profile description</div>
             </div>
             <MyPosts />
         </div>
