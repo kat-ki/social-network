@@ -1,0 +1,60 @@
+.dialogs {
+    display: grid;
+    background-color: white;
+    grid-template-columns: 4fr 8fr;
+}
+
+/*.dialogs a {
+    color: #004d4d;
+    background-color: white;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: left;
+    float: left;
+    width: 100%;
+    height: 40px;
+} */
+
+.dialogItems a {
+    padding: 10px;
+    color: #004d4d;
+    background-color: white;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: left;
+    float: left;
+    width: 100%;
+    height: 20px;
+}
+
+.dialogItems {
+
+}
+
+.dialog a.active {
+    padding: 10px;
+    color: #004d4d;
+    font-weight: bold;
+}
+
+.messages {
+    padding: 0;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: left;
+    float: left;
+    width: 100%;
+    height: 20px;
+}
+
+.message{
+    padding: 10px;
+}

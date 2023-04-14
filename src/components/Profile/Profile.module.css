@@ -1,0 +1,23 @@
+/*.content img {
+    width: 80%;
+    height: 150px;
+    align-items: center;
+    opacity: 100%;
+     margin: 0;
+    padding: 0;
+  /* border-radius: 20px;
+    border-style: solid;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);} */
+
+
+.item {
+    color: blue;
+    width: 100%;
+}
+.item img {
+    max-width: inherit;
+    height: 150px;
+    opacity: 100%;
+    border-radius: 10px;
+    margin: 10px;
+}
