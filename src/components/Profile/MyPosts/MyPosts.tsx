@@ -2,15 +2,10 @@ import React from 'react';
 import styleCl from './MyPosts.module.css'
 import Post from "./Post/Post";
 
-export type MyPostsPropsType = {}
-const MyPosts = (props: MyPostsPropsType) => {
 
-    let posts = [
-        { id: 1, message: 'Hi, how are you?', likesCount: 0 },
-        { id: 2, message: 'Hi, how was your vacation?', likesCount: 15 }
-    ]
+const MyPosts = (props: any) => {
 
-    let postsElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount} />)
+    let postsElements = props.posts.map((p: { message: string; likesCount: number; }) => <Post message={p.message} likesCount={p.likesCount} />)
 
     return (
         <div>

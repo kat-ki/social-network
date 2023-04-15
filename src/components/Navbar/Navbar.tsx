@@ -21,6 +21,9 @@ const Navbar = () => {
             <div className={styleCl.item}>
                 <NavLink to="/settings" activeClassName={styleCl.activeLink}>Settings</NavLink>
             </div>
+            <div className={styleCl.item}>
+                <NavLink to="/friends" activeClassName={styleCl.activeLink}>Friends</NavLink>
+            </div>
         </nav>
     )
 }

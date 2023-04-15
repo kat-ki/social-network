@@ -8,7 +8,8 @@ import styleCl from "./components/Profile/Profile.module.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 
-const App = () => {
+const App = (props: any) => {
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -17,8 +18,9 @@ const App = () => {
 
                 <div className="app-wrapper-content">
                     <Switch>
-                        <Route path="/profile" component={Profile} />
-                        <Route path="/dialogs" component={Dialogs} />
+                        <Route path="/profile" render={() => <Profile state={props.state.profilePage} />} />
+                        <Route path="/dialogs"
+                               render={() => <Dialogs state={props.state.dialogsPage} />} />
                     </Switch>
                 </div>
             </div>
