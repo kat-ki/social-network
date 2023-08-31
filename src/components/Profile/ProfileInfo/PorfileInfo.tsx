@@ -7,10 +7,12 @@ import pic2 from "../pic2.jpg"
 const ProfileInfo = () => {
     return (
         <div>
-            <div>
+            <div className={styleCl.pic}>
                 <img
                     src={pic2}
-                    alt='' />
+                    alt='image'
+                    style={{width: '100%', height: 'auto'}}
+                />
             </div>
             <div className={styleCl.descriptionBlock}> profile description</div>
         </div>
