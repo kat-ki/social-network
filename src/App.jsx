@@ -5,22 +5,28 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs"
 import styleCl from "./components/Profile/Profile.module.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {addPost, updateNewPostText} from "./Redux/state";
 
 
-const App = (props: any) => {
+const App = (props) => {
 
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
-                <Header />
-                <Navbar />
+                <Header/>
+                <Navbar/>
 
                 <div className="app-wrapper-content">
                     <Switch>
-                        <Route path="/profile" render={() => <Profile state={props.state.profilePage} />} />
+                        <Route path="/profile" render={() => <Profile
+                            state={props.state.profilePage}
+                            addPost={props.addPost}
+                            updateNewPostText={props.updateNewPostText}
+                        />}
+                        />
                         <Route path="/dialogs"
-                               render={() => <Dialogs state={props.state.dialogsPage} />} />
+                               render={() => <Dialogs state={props.state.dialogsPage}/>}/>
                     </Switch>
                 </div>
             </div>

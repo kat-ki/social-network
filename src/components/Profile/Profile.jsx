@@ -4,12 +4,16 @@ import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/PorfileInfo";
 
 
-const Profile = (props: any) => {
+const Profile = (props) => {
 
     return (
         <div className={styleCl.item}>
             <ProfileInfo />
-            <MyPosts posts={props.state.posts} />
+            <MyPosts posts={props.state.posts}
+                     addPost={props.addPost}
+                     newPostText={props.state.newPostText}
+                     updateNewPostText={props.updateNewPostText}
+            />
         </div>
     )
 }
