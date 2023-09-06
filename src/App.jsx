@@ -21,8 +21,7 @@ const App = (props) => {
                     <Switch>
                         <Route path="/profile" render={() => <Profile
                             state={props.state.profilePage}
-                            addPost={props.addPost}
-                            updateNewPostText={props.updateNewPostText}
+                            dispatch={props.dispatch}
                         />}
                         />
                         <Route path="/dialogs"

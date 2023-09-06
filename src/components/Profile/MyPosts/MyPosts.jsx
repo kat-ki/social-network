@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import styleCl from './MyPosts.module.css'
 import Post from "./Post/Post";
-import {updateNewPostText} from "../../../Redux/state";
+import {addPostAC, updateNewPostText, updateNewPostTextAC} from "../../../Redux/state";
 
 const MyPosts = (props) => {
 
@@ -11,12 +11,14 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     const addPost = () => {
-            props.addPost();
+        props.dispatch(addPostAC());
     }
 
     const onPostChange = () => {
         let text = newPostElement.current.value;
-            props.updateNewPostText(text);
+        let action = updateNewPostTextAC(text)
+        props.dispatch(action)
+
     }
 
     return (
@@ -30,7 +32,7 @@ const MyPosts = (props) => {
                     />
                 </div>
                 <div>
-                    <button onClick={addPost} >Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
             <div className={styleCl.posts}>
