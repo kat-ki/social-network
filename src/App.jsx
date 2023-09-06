@@ -25,7 +25,7 @@ const App = (props) => {
                         />}
                         />
                         <Route path="/dialogs"
-                               render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                               render={() => <Dialogs store={props.store}/>}/>
                     </Switch>
                 </div>
             </div>
