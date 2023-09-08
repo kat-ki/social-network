@@ -1,8 +1,5 @@
-let ADD_POST = 'ADD-POST';
-let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-
-let UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
-let SEND_MESSAGE = 'SEND_MESSAGE';
+import profileReducer, {ADD_POST, UPDATE_NEW_POST_TEXT} from "./profile-reducer";
+import dialogsReducer, {SEND_MESSAGE, UPDATE_NEW_MESSAGE_BODY} from "./dialogs-reducer";
 
 let store = {
     _state: {
@@ -29,8 +26,7 @@ let store = {
                 {id: 5, message: 'No, actually not. What about you?'}
             ],
             newMessageBody: ''
-        },
-        sidebar: {}
+        }
     },
     _callSubscriber() {     // bla bla
     }, // is rerenderEntireTree function from index.js
@@ -43,37 +39,14 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
-
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.body;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageBody;
-            this._state.dialogsPage.newMessageBody = '';
-            this._state.dialogsPage.messages.push({id: 6, message: body});
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._callSubscriber(this._state)
     }
 }
 
 
-export const addPostAC = () => ({type: ADD_POST})
-export const updateNewPostTextAC = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
-export const sendMessageAC = () => ({type: SEND_MESSAGE})
-export const updateNewMessageBodyAC = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
 
 export default store;
 /*
