@@ -6,7 +6,7 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs"
 import styleCl from "./components/Profile/Profile.module.css";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {addPost, updateNewPostText} from "./Redux/state";
+import {addPost, updateNewPostText} from "./Redux/store";
 
 
 const App = (props) => {
